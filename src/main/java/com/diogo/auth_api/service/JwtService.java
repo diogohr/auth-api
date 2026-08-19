@@ -15,11 +15,11 @@ import java.util.function.Function;
 @Service
 public class JwtService {
 
-    // O Spring pega a chave do seu application.properties e coloca aqui
+    // A chave virá do arquivo application.properties
     @Value("${jwt.secret}")
     private String secretKey;
 
-    private static final long EXPIRATION_TIME = 86400000; // 24 horas em milissegundos
+    private static final long EXPIRATION_TIME = 86400000; // 24 horas
 
     public String generateToken(String username) {
         return Jwts.builder()
@@ -57,7 +57,6 @@ public class JwtService {
     }
 
     private Key getSigningKey() {
-        // Agora usamos a variável 'secretKey' injetada pelo @Value
         return Keys.hmacShaKeyFor(secretKey.getBytes());
     }
 }

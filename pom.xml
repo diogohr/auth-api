@@ -21,38 +21,38 @@
 	</properties>
 
 	<dependencies>
-		<!-- 1. Spring Web (Para criar as rotas REST) -->
+		<!-- 1. Spring Web (Rotas da API) -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
-		<!-- 2. Spring Security (Barreiras de segurança) -->
+		<!-- 2. Spring Security (Segurança e UserDetails) -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
 		</dependency>
 
-		<!-- 3. Spring Data JPA (Comunicação com o banco) -->
+		<!-- 3. Spring Data JPA (Banco de Dados) -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 		</dependency>
 
-		<!-- 4. Spring Mail (Envio de e-mails de recuperação) -->
+		<!-- 4. Spring Mail (Recuperação de Senha) -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-mail</artifactId>
 		</dependency>
 
-		<!-- 5. Driver do PostgreSQL -->
+		<!-- 5. PostgreSQL (Driver do Banco) -->
 		<dependency>
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
 			<scope>runtime</scope>
 		</dependency>
 
-		<!-- 6. Bibliotecas do JWT (JJWT) -->
+		<!-- 6. JWT (Tokens de Autenticação) -->
 		<dependency>
 			<groupId>io.jsonwebtoken</groupId>
 			<artifactId>jjwt-api</artifactId>
@@ -71,7 +71,7 @@
 			<scope>runtime</scope>
 		</dependency>
 
-		<!-- 7. Bibliotecas de Teste padrão do Spring -->
+		<!-- 7. Testes -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
