@@ -6,7 +6,7 @@ API de Autenticação e Gerenciamento de Usuários desenvolvida com Spring Boot,
 
 ## Tecnologias Utilizadas
 
-* Java 21
+* Java 17
 * Spring Boot 3.2.4
 * Spring Security & JWT (Autenticação Stateless)
 * Spring Data JPA / Hibernate (Persistência de dados)
