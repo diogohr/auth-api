@@ -12,6 +12,7 @@ API de Autenticação e Gerenciamento de Usuários desenvolvida com Spring Boot,
 * Spring Data JPA / Hibernate (Persistência de dados)
 * PostgreSQL (Banco de dados relacional)
 * Docker & Docker Compose (Containerização)
+* Swagger / OpenAPI 3 (Documentação da API)
 * JUnit 5 (Testes unitários)
 
 ---
@@ -22,6 +23,7 @@ API de Autenticação e Gerenciamento de Usuários desenvolvida com Spring Boot,
 * **Autenticação (Login):** Geração e validação de token JWT.
 * **Recuperação de Senha:** Fluxo de "Esqueci a senha" com geração de token seguro e simulação de envio.
 * **Reset de Senha:** Atualização de credenciais via token válido.
+* **Documentação Interativa:** Swagger UI integrado para testes rápidos dos endpoints.
 * **Testes Automatizados:** Suíte de testes unitários validando a regra de negócio do JWT.
 
 ---
@@ -32,5 +34,5 @@ Certifique-se de ter o Docker e o Docker Compose instalados na sua máquina.
 
 1. Clone o repositório:
    ```bash
-   git clone [https://github.com/diogohr/auth-api.git](https://github.com/SEU-USUARIO/auth-api.git)
+   git clone [https://github.com/diogohr/auth-api.git](https://github.com/diogohr/auth-api.git)
    cd auth-api
