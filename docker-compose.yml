@@ -1,35 +1,31 @@
 version: '3.8'
 
 services:
-  # Container do Banco de Dados PostgreSQL
-  database:
-    image: postgres:15-alpine
-    container_name: auth_postgres_db
+  db:
+    image: postgres:16-alpine
+    container_name: postgres_db
     environment:
-      POSTGRES_USER: admin
-      POSTGRES_PASSWORD: adminpassword
-      POSTGRES_DB: auth_database
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 281220
+      POSTGRES_DB: auth_db
     ports:
-      - "5432:5432"
+      - "5433:5432"
     volumes:
-      - auth_db_data:/var/lib/postgresql/data
+      - pgdata:/var/lib/postgresql/data
 
-  # Container da sua API Java (Spring Boot)
-  api:
-    build: . # Manda o Docker construir a imagem usando o Dockerfile da mesma pasta
-    container_name: auth_spring_api
-    depends_on:
-      - database # Diz que a API só pode subir depois que o banco estiver pronto
-    ports:
-      - "8080:8080"
+  app:
     environment:
-      # O segredo está aqui! Sobrescrevemos o application.properties apontando pro container 'database'
-      SPRING_DATASOURCE_URL: jdbc:postgresql://database:5432/auth_database
-      SPRING_DATASOURCE_USERNAME: admin
-      SPRING_DATASOURCE_PASSWORD: adminpassword
-      # Você pode colocar as credenciais do seu e-mail aqui também para não ficarem expostas no código fonte:
-      # SPRING_MAIL_USERNAME: seu.email@gmail.com
-      # SPRING_MAIL_PASSWORD: sua-senha-de-app-gerada
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/auth_db
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=281220
+      - JWT_SECRET=minha_chave_secreta_super_segura_123
+    build: .
+    container_name: auth_api
+    ports:
+      - "8081:8081"
+
+    depends_on:
+      - db
 
 volumes:
-  auth_db_data: # Mantém os dados do banco salvos mesmo se o container for apagado
+  pgdata:

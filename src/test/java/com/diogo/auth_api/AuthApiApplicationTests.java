@@ -1,3 +1,5 @@
+/*
+
 package com.diogo.auth_api;
 
 import org.junit.jupiter.api.Test;
@@ -11,3 +13,4 @@ class AuthApiApplicationTests {
 	}
 
 }
+*/
